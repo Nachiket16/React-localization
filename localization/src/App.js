@@ -6,26 +6,26 @@ import { useTranslation } from "react-i18next";
 
 const languages = [
   {
-    code: 'en',
-    name: 'English',
-    state: 'us'
+    code: "en",
+    name: "English",
+    state: "us",
   },
   {
-    code: 'hi',
-    name: 'Hindi',
-    state: 'north'
+    code: "hi",
+    name: "Hindi",
+    state: "north",
   },
   {
-    code: 'ta',
-    name: 'Tamil',
-    state: 'tam'
+    code: "ta",
+    name: "Tamil",
+    state: "tam",
   },
   {
-    code: 'te',
-    name: 'Telagu',
-    state: 'ap'
-  }
-]
+    code: "te",
+    name: "Telagu",
+    state: "ap",
+  },
+];
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -37,7 +37,7 @@ function App() {
 
   const lng = navigator.language;
 
-  var amount = 786;
+  var amount = 938475;
   return (
     <div className="container">
       <div className="d-flex justify-content-end">
@@ -52,12 +52,15 @@ function App() {
             lang
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            {languages.map(({code,name,state}) => (
-            <li key={state}>
-              <button className="dropdown-item" onClick={() => i18next.changeLanguage(code)}>
-                {name}
-              </button>
-            </li>
+            {languages.map(({ code, name, state }) => (
+              <li key={state}>
+                <button
+                  className="dropdown-item"
+                  onClick={() => i18next.changeLanguage(code)}
+                >
+                  {name}
+                </button>
+              </li>
             ))}
           </ul>
         </div>
